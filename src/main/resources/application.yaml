@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: decentralized-digital-identity-for-the-homeless-refugee
+  datasource:
+    url: jdbc:mysql://localhost:3306/idconnect?useSSL=false&allowPublicKeyRetrieval=true
+    username: idconnect
+    password: idconnect
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${idp.issuer}
+
+idp:
+  issuer:
+    audience:
